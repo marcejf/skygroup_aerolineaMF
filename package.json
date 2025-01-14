@@ -1,0 +1,33 @@
+{
+  "name": "db_aerolinea_mf",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node conexion.js ",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Marcela Fernandez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.20.3",
+    "cors": "^2.8.5",
+    "dan": "^0.0.1",
+    "db_aerolinea_mf": "file:",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "pg": "^8.13.1",
+    "pg-cloudflare": "^1.1.1",
+    "pg-connection-string": "^2.7.0",
+    "pg-int8": "^1.0.1",
+    "pg-pool": "^3.7.0",
+    "pg-protocol": "^1.7.0",
+    "pgpass": "^1.0.5",
+    "split2": "^4.2.0",
+    "xtend": "^4.0.2"
+  },
+  "keywords": [],
+  "description": ""
+}

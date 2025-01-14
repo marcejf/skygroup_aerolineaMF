@@ -1,0 +1,1 @@
+const registerpasajero = document.querySelector('formcliente')
