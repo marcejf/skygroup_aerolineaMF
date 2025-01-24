@@ -1,1 +1,1 @@
-const registerpasajero = document.querySelector('formcliente')
+const registerpasajero = document.querySelector('formcliente') 

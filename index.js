@@ -1,39 +1,40 @@
-import express from 'express';
-import { db } from './database/conexion_db.js'; //importamos la conexion
 import 'dotenv/config';
+import express from 'express';
+//import { db } from './database/conexion_db.js'; //importamos la conexion
 import pasajeroRouter from './routes/pasajero.route.js';
+import publicRouter from './routes/public.router.js';
+import loginRouter from './routes/login.route.js';
+import path from 'path'
+import { fileURLToPath } from 'url';
+//import bodyParser from 'body-parser';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
-//ruta raiz
+app.get('/', (req, res) =>{
+    res.redirect('/login.html');
+});
 
-/* app.get('/', (req,res) => { 
-    res.send('hello world')
-}); 
-
-esto se activa antes de empezar a ver la base de datos de nuestro interes*/
-
-// ruta para probar la conexion a la base de Datoss 
-
-app.get('/db-status', async (req, res) =>  {
-    try {
-        const result = await db.query('SELECT NOW()');
-        res.json({ status: 'conexion exitosa', time: result.rows[0] });
-    }catch (error) {
-        console.error('error al consultar la base de datoss ', error);
-        res.status(500).json({status: 'error en la conexion', error: error.message});
-    }
-}); 
-
-
-app.use(express.static('public'));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-
+//middleware de app,   app.use es middleware , le llega la info en formato express y lo convierte a json
+app.use(express.static (path.join(__dirname, 'public')));
+app.use(express.json()); //parsear el boddy de la peticion json
+app.use(express.urlencoded({extended: true})); //permite que codifiquemoss la solicitudes
+app.use('/',publicRouter);
 app.use('/api/v1/pasajero', pasajeroRouter);
+app.use('/api/v1/login', loginRouter);
+//app.use(bodyParser.json());
+//app.use('/api/v1/login', loginRouter);
+
+
+
+
 //Levantar el servidor
 
 const PORT =  process.env.PORT || 3000;
+
 app.listen(PORT, () =>  {
-    console.log(` el servidor esta escuchando en el puerto ${PORT}`);});
+    console.log(` el servidor esta escuchando en el puerto http://localhost:${PORT}`)});
 
  

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <title>Pasajeros</title>
+    <title>Empleados</title>
 </head>
 <body style=" background-color:#2c3e50;">
     <div class="container-fluid mt-4">
@@ -16,9 +16,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/pasajeros.html" >Pasajeros</a>
+                            <a class="nav-link active" aria-current="page" href="/pasajeros.html">Pasajeros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/equipaje.html">Equipaje</a>
@@ -56,102 +56,98 @@
             </div>
         </nav>
         <br>
-        <h1 class="blockquote text-white ">Gestion de Pasajeros</h1>
-        <form class=" container  mt-4 rounded "  id="formpasajero" action="http://localhost:3000/api/v1/pasajero/register" method="post">
-        <div class="row">
-            <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="id_pasajero" class="text-white mb-2">ID Pasajero</label>
-                    <input class="form-control " type="text" id="id_pasajero" name="id_pasajero" required>
-                </div>
-            </div>
+        <br>
+        <h1 class="blockquote text-white ">Gestion de Empleados</h1>
+        <form class=" container  mt-4 rounded " id="formempleado" method="post">
+            <div class="row">
                 <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="nombres" class="text-white mb-2">Nombres</label>
-                    <input class="form-control " type="text" id="nombres" name="nombres" required> 
+                    <div class="form-grup">
+                        <label  class="text-white mb-2" for="id_empleado">ID Empleado</label>
+                        <input class="form-control" type="text" id="id_empleado" required>
+                    </div>
+                </div>
+            <div class="col-12 col-md-4 mb-1">
+                <div class="form-grup">
+                    <label class="text-white mb-2"for="nombresem">Nombres</label>
+                    <input class="form-control" type="text" id="nombresem" required> 
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="apellidos" class="text-white mb-2">Apellidos </label>
-                    <input class="form-control " type="text" id="apellidos"  name="apellidos"required>
+                <div class="form-grup">
+                    <label class="text-white mb-2" for="apellidosem">Apellidos </label>
+                    <input class="form-control" type="text" id="apellidosem" required>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label for="documento" class="text-white mb-2">Documento</label>
-                    <input class="form-control " type="text" id="documento" name="documento" required>
+                <div class="form-grup">
+                    <label class="text-white mb-2"for="pais_origen">Pais Origen</label>
+                    <input class="form-control" type="text" id="pais_origen" required>
+                </div>
+            </div>    
+            <div class="col-12 col-md-4 mb-1">
+                <div class="form-grup">
+                    <label class="text-white mb-2" for="telefono_1">Telefono 1</label>
+                    <input class="form-control" type="text" id="telefono_1" required>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-1">
-                <div class="form-group"> 
-                    <label class="text-white mb-2" for="edad">Edad</label>
-                    <input class="form-control  " type="number" id="edad" name="edad" required>
+                <div class="form-grup">
+                    <label class="text-white mb-2" for="telefono_2">Telefono 2</label>
+                    <input class="form-control" type="text" id="telefono_2">
+                </div>
+            </div>    
+            <div class="col-12 col-md-4 mb-1">
+                <div class="form-grup">
+                    <label class="text-white mb-2"for="email">Email </label>
+                    <input class="form-control" type="email" id="email"required>
+                </div>
+            </div>    
+            <div class="col-12 col-md-4 mb-1">
+                <div class="form-grup">
+                    <label class="text-white mb-2"for="cargo">Cargo</label>
+                    <input class="form-control" type="text" id="cargo" required>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label for="pais_origen"class="text-white mb-2">Paìs De Origen</label>
-                    <input class="form-control " type="text" id="pais_origen"name="pais_origen" required>
+                <div class="form-grup">
+                    <label class="text-white mb-2"for="salario">salario</label>
+                    <input class="form-control" type="number" id="salario" required>
                 </div>
-            </div>
-            
+            </div>    
             <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="telefono_1"class="text-white mb-2">Telefono 1</label>
-                    <input class="form-control " type="text" id="telefono_1" name="telefono_1" required>
+                <div class="form-grup">
+                    <label class="text-white mb-2" for="facha_contrato">Fecha De Contratacion</label>
+                    <input class="form-control" type="date" id="fecha_contrato" required>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="telefono_2"class="text-white mb-2">Telefono 2</label>
-                    <input class="form-control " type="text" id="telefono_2" name="telefono_2">
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-1">
-                <div class="form-group">
-                    <label  for="email"class="text-white mb-2">Email </label>
-                    <input class="form-control " type="email" id="email"  name="email" required>
-                </div>
-            </div>
-            <br> 
-            <div class="d-flex justify-content-between mt-3">
-                <button class="btn btn-primary mb-2" type="submit">Enviar</button>
-                <button class="btn btn-danger mb-2" type="reset">Borrar</button>
-                <button type="button" class="btn btn-info" onclick="loadpasajeros()">Cargar Clientes</button>
-                <div class="input-group w-50">
-                <input type="text" id="searchInput" class="form-control" placeholder="Buscar pasajerps">
-                <button type="button" class="btn btn-success" onclick="searchPasajero()">Buscar</button>
-            </div>
-            <br>
-            <br>
-        </div>
-        <br>
-        <br>
+            </div>    
+           <div> 
+                <button class="btn btn-primary mb-3" type="submit">Enviar</button>
+                <button class="btn btn-danger mb-3" type="reset">Borrar</button>
+            </div>    
+            </div>         
         </form>
         <br>
-        <table class="table table-striped table-hover table-bordered" id="tablapasajeross">
+        <table class="table table-striped table-hover table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">ID pasajero</th>
+                    <th scope="col">ID Empleado</th>
                     <th scope="col">Nombres</th>
                     <th scope="col">Apellidos</th>
-                    <th scope="col">Documento</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Pais De Origen</th>
-                    <th scope="col">Telefono 1</th>
+                    <th scope="col">pais de Origen</th>
+                    <th scope="col">telefono 1</th>
                     <th scope="col">Telefono 2</th>
                     <th scope="col">Email</th>
-                    <th scope="col">acciones</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Salrio</th>
+                    <th scope="col">Fecha de Contratacion</th>
                 </tr>
             </thead>
-            <tbody id="pasajeross">
+            <tbody id="empleadoss">
             </tbody>
         </table>
 
     </div> 
-    <script src="script.js"></script>
+    <script src="../otros/script.empleados.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
